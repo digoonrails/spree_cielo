@@ -5,6 +5,8 @@ module Spree
     has_one :payment, :as => :source
     delegate :order, :to => :payment
     
+    attr_accessible :order_id, :cc_type, :instalments
+    
     def process!(payment)
       payment.pend
       redirect_url = "#{Spree::Config[:site_url]}/cielo/orders/#{order.number}/payments/#{payment.id}/verify"

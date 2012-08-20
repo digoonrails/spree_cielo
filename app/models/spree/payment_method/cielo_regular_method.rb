@@ -5,6 +5,8 @@ module Spree
     preference :maximo_parcelas, :integer, :default => 3
     preference :cielo_environment, :string, :default => "Test"
     
+    attr_accessible :preferred_numero_afiliacao, :preferred_chave_acesso, :preferred_maximo_parcelas, :preferred_cielo_environment
+    
     # def payment_profiles_supported?
     #   true
     # end
